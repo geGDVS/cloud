@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SQJ文件传输</title>
+<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/css/bootstrap.min.css">
+<script src="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="50">
+
+  
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top ">
+  <div class="container-fluid">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="#about">简介</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#upload">上传文件</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#faq">FAQ</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#other">其他</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div id="about" class="container-fluid bg-body" style="padding:100px 20px;">
+    <div class="container-fluid p-5 bg-primary text-white text-center">
+    <h1><span class="badge bg-info">SQJ</span>文件传输</h1>
+</div>
+ 
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-sm-4">
+        <h3>免费</h3>
+        <p>无需注册，完全免费，不收1分钱！</p>
+          <br><br><br>
+        </div>
+        <div class="col-sm-4">
+        <h3>不限速</h3>
+        <p>无限速代码，能多快就有多快！</p>
+        </div>
+        <div class="col-sm-4">
+        <h3>不限大小</h3>        
+        <p>大文件，小文件，全都可以！</p>
+        </div>
+        <div class="col-sm-4">
+        <h3>安全</h3>        
+        <p>32/16位强密码，别人不可能知道您的文件！</p>
+        </div>
+      <div class="col-sm-4">
+        <h3>支持预览</h3>        
+        <p>支持图片，文档，视频，音频在线预览！</p>
+        </div>
+        <div class="col-sm-4">
+        <h3>保留文件名</h3>        
+        <p>我们不会修改您的文件名，接收方可以清楚地下载文件！</p>
+        </div>
+    </div>
+</div>
+
+
+</div>
+
+<div id="upload" class="container-fluid bg-body" style="padding:100px 20px;">
+  <div class="container p-5 my-5 bg-primary text-white">
+    <h1>上传文件</h1>
+    <p><form method="post" action="" enctype="multipart/form-data">{% csrf_token %}<input type="file" name="myfile" /><br><br>
+      <input type="checkbox" name='save'/> 保留文件名<br><br>
+      <input type="submit" value="上传"/></form></p>
+  </div>
+</div>
+  
+<div id="faq" class="container-fluid bg-info" style="padding:100px 20px;">
+  <h1>常见问题解答</h1>
+  
+<div class="container mt-3">       
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>姓名</th>
+        <th>问题</th>
+        <th>解答</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>欢迎提问</td>
+        <td>欢迎提问</td>
+        <td>欢迎提问</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+<div id="other" class="container-fluid bg-secondary text-white" style="padding:100px 20px;">
+  <div class="alert alert-warning">
+    <strong>10月24日</strong> 及以前文件已被定时清除。
+  </div>
+  <div class="container mt-3">
+  <strong class="text-info">Follow me on: </strong>  
+  <div class="btn-group">
+    <button type="button" class="btn btn-primary" onclick='twitter()'>Twitter</button>
+    <button type="button" class="btn btn-primary" onclick='github()'>Github</button>
+  </div></div>
+  <div class="container mt-3">
+  <strong class="text-info">Other products: </strong>  
+  <div class="btn-group">
+    <button type="button" class="btn btn-primary" onclick='web("flappy-bird")'>Flappy Bird</button>
+    <button type="button" class="btn btn-primary" onclick='web("forum")'>Forum</button>
+    <button type="button" class="btn btn-primary" onclick='web("mc")'>Minecraft(Forked)</button>
+    <button type="button" class="btn btn-primary" onclick='web("sweeper")'>Mine Sweeper(Forked)</button>
+  </div>
+  <blockquote class="blockquote">
+    <br>
+    <footer class="blockquote-footer text-white">©2022 SQJ Cloud. All rights reserved.</footer>
+  </blockquote>
+</div>
+</div>
+  
+<script>
+  function twitter(){
+    window.location.href='https://twitter.com/SQJ11216730';
+  }
+  function github(){
+    window.location.href='https://github.com/geGDVS';
+  }
+  function web(str){
+    window.location.href='https://'+str+'.sqj.repl.co/';
+  }
+
+
+</script>
+</body>
+
+</html>

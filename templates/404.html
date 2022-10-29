@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>SQJ文件传输</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid p-5 bg-primary text-white text-center">
+    <h1><span class="badge bg-info">SQJ</span>文件传输</h1>
+    </div>
+    <div class="alert alert-danger">
+    <strong>错误！</strong>该文件不存在或已被删除！
+  </div>
+  <div class="container p-5 my-5 bg-primary text-white">
+  <h1>上传文件</h1>
+  <p><form method="post" action="" enctype="multipart/form-data">{% csrf_token %}<input type="file" name="myfile" /><br><br><input type="submit" value="上传"/></form></p>
+  </div>
+
+</body>
+
+</html>

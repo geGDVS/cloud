@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>SQJ文件传输</title>
+<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/css/bootstrap.min.css">
+<script src="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.staticfile.org/clipboard.js/2.0.4/clipboard.min.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid p-5 bg-primary text-white text-center">
+    <h1><span class="badge bg-info">SQJ</span>文件传输</h1>
+</div>
+ <div class="alert alert-success">
+  <strong>上传成功!</strong> 可以在 <a href="file/{{url}}/{{name}}" class="alert-link" target='_blank'>https://cloud.sqj.repl.co/file/{{url}}/{{name}}</a> 下载（预览）。
+   <button type="button" class="btn btn-primary" id='copyInput'>复制链接到剪贴板</button>
+ </div>
+    
+  <div class="container p-5 my-5 bg-primary text-white">
+  <h1>再次上传文件</h1>
+    <p><form method="post" action="" enctype="multipart/form-data">{% csrf_token %}<input type="file" name="myfile" /><br><br>
+      <input type="checkbox" name='save'/> 保留文件名<br><br>
+      <input type="submit" value="上传"/></form></p>
+  </div>
+<script>
+  new ClipboardJS('#copyInput', {
+    text: function(trigger) {
+        return 'https://cloud.sqj.repl.co/file/{{url}}/{{name}}';
+    }
+}).on('success', function(e) {
+document.getElementById("copyInput").innerHTML = '复制成功!'
+
+}).on('error', function(e) {
+  alert('复制失败!');
+});
+</script>
+</body>
+
+</html>
